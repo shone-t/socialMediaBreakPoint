@@ -18,14 +18,26 @@ class GroupFeedVC: UIViewController {
     @IBOutlet weak var messageTextField: InsetTextField!
     @IBOutlet weak var sendBtn: UIView!
     
-    func initGroupData() {
-        
+    var group: Group?
+    
+    func initData(forGroup group: Group) {
+        self.group = group
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sendBtnView.bindToKeyboard()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        groupTitleLbl.text = group?.groupTitle
+        DataService.instance.getEmailForGroup(group: group!) { (returnedEmails) in
+            self.membersLbl.text = returnedEmails.joined(separator: ", ")
+        }
+        
+        
     }
     
     @IBAction func sendBtnWasPressed(_ sender: Any) {
