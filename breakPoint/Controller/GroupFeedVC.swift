@@ -10,21 +10,38 @@ import UIKit
 
 class GroupFeedVC: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var groupTitleLbl: UILabel!
+    @IBOutlet weak var membersLbl: UILabel!
+    
+    @IBOutlet weak var sendBtnView: UIView!
+    @IBOutlet weak var messageTextField: InsetTextField!
+    @IBOutlet weak var sendBtn: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        sendBtnView.bindToKeyboard()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func sendBtnWasPressed(_ sender: Any) {
+        
     }
-    */
-
+    @IBAction func backBtnWasPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
+
+//extension GroupFeedVC: UITableViewDelegate, UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//    
+//    
+//}

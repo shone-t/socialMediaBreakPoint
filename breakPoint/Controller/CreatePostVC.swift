@@ -7,24 +7,51 @@
 //
 
 import UIKit
+import Firebase
 
 class CreatePostVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak var textField: UITextView!
+    @IBOutlet weak var sendBtn: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        emailLbl.text = Auth.auth().currentUser?.email
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        textField.delegate = self
+        
+        sendBtn.bindToKeyboard()
+        
     }
-    */
+    
+    @IBAction func sendBtnClosePressed(_ sender: Any) {
+        if textField.text != nil && textField.text != "Say something here..." {
+            sendBtn.isEnabled = false
+            DataService.instance.uploadPost(withMessage: textField.text, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil, sendComplete: {(isComplate) in
+                if isComplate {
+                    self.sendBtn.isEnabled = true
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    self.sendBtn.isEnabled = true
+                    print("There was an error! with send message")
+                }
+            })
+        }
+    }
+    
+    @IBAction func closeBtnWasPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
 
+extension CreatePostVC: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = ""
+    }
 }

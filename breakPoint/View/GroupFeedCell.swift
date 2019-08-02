@@ -10,15 +10,14 @@ import UIKit
 
 class GroupFeedCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak var contentLbl: UILabel!
+    
+    func configureCell(profielImage: UIImage, email: String, content: String){
+        self.profileImage.image = profielImage
+        self.emailLbl.text = email
+        self.contentLbl.text = content
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }
