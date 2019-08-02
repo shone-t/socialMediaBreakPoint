@@ -20,6 +20,7 @@
 		52514E4122E5DE7C001FB6DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52514E3F22E5DE7C001FB6DC /* LaunchScreen.storyboard */; };
 		52514E4E22E5DEDD001FB6DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52514E4D22E5DEDD001FB6DC /* GoogleService-Info.plist */; };
 		52514E5022E5E739001FB6DC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52514E4F22E5E739001FB6DC /* DataService.swift */; };
+		528109D422F4DFA700157822 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528109D322F4DFA600157822 /* UIViewControllerExt.swift */; };
 		529F049C22F2EC1900D6C299 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F049B22F2EC1900D6C299 /* MeVC.swift */; };
 		529F049E22F2F59C00D6C299 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F049D22F2F59C00D6C299 /* CreatePostVC.swift */; };
 		529F04A022F3085C00D6C299 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529F049F22F3085C00D6C299 /* UIViewExt.swift */; };
@@ -51,6 +52,7 @@
 		52514E4222E5DE7C001FB6DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52514E4D22E5DEDD001FB6DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52514E4F22E5E739001FB6DC /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		528109D322F4DFA600157822 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		529F049B22F2EC1900D6C299 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		529F049D22F2F59C00D6C299 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		529F049F22F3085C00D6C299 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				529F049F22F3085C00D6C299 /* UIViewExt.swift */,
+				528109D322F4DFA600157822 /* UIViewControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				529F049C22F2EC1900D6C299 /* MeVC.swift in Sources */,
 				522C25E522F4539D006B2F8D /* GroupCell.swift in Sources */,
 				52C172F122EDAB600034E37F /* AuthVC.swift in Sources */,
+				528109D422F4DFA700157822 /* UIViewControllerExt.swift in Sources */,
 				52514E3922E5DE7B001FB6DC /* GroupsVC.swift in Sources */,
 				522C25EB22F46D75006B2F8D /* GroupFeedVC.swift in Sources */,
 				522C25E922F46CE8006B2F8D /* GroupFeedCell.swift in Sources */,

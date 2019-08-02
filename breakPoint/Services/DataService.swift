@@ -53,6 +53,9 @@ class DataService {
         
         if groupKey != nil {
             // send to groups ref
+            
+            REF_GROUPS.child(groupKey!).child("messages").childByAutoId().updateChildValues(["content": message, "senderId": uid])
+            sendComplete(true)
         } else {
             REF_FEED.childByAutoId().updateChildValues(["content": message, "senderId": uid])
             sendComplete(true)
@@ -79,7 +82,20 @@ class DataService {
             }
         }
     }
-    
+    func getAllMessageFor(desiredGroup: Group, handler: @escaping(_ messageArray: [Message]) -> ()){
+        var groupMessageArray = [Message]()
+        REF_GROUPS.child(desiredGroup.key).child("messages").observeSingleEvent(of: .value) { (groupMessageSnapshot) in
+            guard let groupMessageSnapshot = groupMessageSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            for groupMessage in groupMessageSnapshot {
+                let content = groupMessage.childSnapshot(forPath: "content").value as! String
+                let senderId = groupMessage.childSnapshot(forPath: "senderId").value as! String
+                let groupMessage = Message(content: content, senderId: senderId)
+                groupMessageArray.append(groupMessage)
+            }
+            handler(groupMessageArray)
+        }
+    }
+
     func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String]) -> ()){
         var emailArray = [String]()
         REF_USERS.observe(.value) { (userSnapshot) in

@@ -653,7 +653,7 @@
                         <outlet property="groupTitleLbl" destination="czK-ef-aps" id="KYS-tv-EEe"/>
                         <outlet property="membersLbl" destination="0wL-jE-mZN" id="X1E-5S-ICb"/>
                         <outlet property="messageTextField" destination="Lvt-nq-qHo" id="gmz-7V-aNB"/>
-                        <outlet property="sendBtn" destination="BBm-T3-XpP" id="G78-0k-Gqn"/>
+                        <outlet property="sendBtn" destination="HPK-7b-KxJ" id="bCP-kr-15j"/>
                         <outlet property="sendBtnView" destination="BBm-T3-XpP" id="Qhb-po-gFa"/>
                         <outlet property="tableView" destination="UGf-Rb-7ZB" id="Qqc-W0-KZP"/>
                     </connections>
