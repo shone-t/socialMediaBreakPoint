@@ -18,6 +18,9 @@ class GroupFeedVC: UIViewController {
     @IBOutlet weak var messageTextField: InsetTextField!
     @IBOutlet weak var sendBtn: UIView!
     
+    func initGroupData() {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
